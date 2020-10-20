@@ -1,0 +1,763 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+@import './modules/_variables.scss';
+@import './modules/_mixins.scss';
+
+//GENERAL ADJUSTMENTS
+
+*{
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+body{
+  font-family: 'Special Elite', cursive;
+}
+
+//NAV SECTION
+.nav{
+  grid-column: 1 / 13;
+  z-index: 5;
+  position: sticky;
+  top: -1px;
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  color: white;
+  li{
+    display: inline-block;
+    margin: 32px;
+  }
+  .hide-menu{
+    color: $dark-jungle-green;
+  }
+  a{
+    color: white;
+    border: 1px solid white;
+    padding: 7px 10px;
+    padding-top: 10px;
+    border-radius: 3px;
+    @include transition;
+    transition-duration: 0.15s;
+  &:hover{
+    background-color: #B2FFB1;
+    }
+  }
+}
+.menu-icon{
+  float: right;
+  color: white;
+  font-size: 30px;
+  margin: 0.9em;
+  cursor: pointer;
+  display: none;
+}
+
+//GENERAL GRID AND COLOR DESIGN
+.grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  @include full;
+  &.about{
+    background-color:rgba(#D8F3DC,1)!important;
+    height: 100%;
+  }
+  &.menu{
+    background-color:rgba(#D2C9FF, 0.7)!important;
+    height: 100%;
+  }
+  &.contact{
+    background-color:rgba(#D8F3DC, 1)!important;
+    height: 100%;
+  }
+}
+    .nav{
+      background-color: $dark-jungle-green;
+
+    }
+    .gallery{
+      background-color:rgba(#D2C9FF, 0.7)!important;
+      height: 100%;
+    }
+    .munchies-screen{
+      background-color: #D8F3DC;
+    }
+    .exit:hover{
+      background-color:rgba(#B2FFB1, 1)!important;
+    }
+    .btn:before{
+      background-color: #B2FFB1;
+    }
+
+//MAIN SECTION
+
+.logo-gimlet{
+  width: 100%;
+  img{
+    margin-top: 5em;
+    width: 100%;
+  }
+}
+//ABOUT SECTION
+.about-text{
+  grid-column: 1 / 1;
+  margin:3em;
+  @include text-center;
+  h1{
+    font-size: $medium;
+    margin-bottom: 1em;
+    letter-spacing: $spacing-h;
+    text-transform: uppercase;
+  }
+  p{
+    font-size: $mini;
+    line-height: $lines-spacing-m;
+    letter-spacing: $spacing-p;
+  }
+}
+.about-image{
+  grid-column: 1 / 1;
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-bottom: 3em;
+    img{
+      width: 100%;
+    }
+}
+
+//MENU SECTION
+.menu-text{
+  grid-column: 1 / 1;
+  margin: 3em;
+  @include text-center;
+  div{
+    margin-top: 10%;
+  }
+  h1{
+    font-size: $medium;
+    margin-bottom: 1em;
+    letter-spacing: $spacing-h;
+    line-height: $lines-spacing-m;
+    text-transform: uppercase;
+  }
+  p{
+    font-size: $mini;
+    line-height: $lines-spacing-m;
+    letter-spacing: $spacing-p;
+  }
+  .btn{
+    z-index: 1;
+    color: $black;
+    font-size: $medium-big;
+    letter-spacing: $spacing-p;
+    position: relative;
+    box-sizing: border-box;
+    border: solid 2px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 3em;
+    padding-top: 0.2em;
+    padding-left: 0.1em;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 0%;
+      bottom: 0px;
+      left: 0px;
+      z-index: -1;
+      transition:  all 0.2s ease-out;
+    }
+    &:hover::before{
+      height: 100%;
+    }
+  }
+}
+.menu-image{
+  grid-column: 1 / 1;
+  margin-left: 10px;
+  margin-right: 10px;
+    img{
+      width: 100%;
+    }
+}
+
+//CONTACT SECTION
+#map{
+  min-height: 300px;
+  grid-column: 1 / 2;
+  margin:3em;
+}
+.information{
+    grid-column: 1 / 1;
+    text-align: center;
+    font-size: $mini;
+    line-height: $lines-spacing-m;
+    letter-spacing: $spacing-p;
+    margin-top: 0em;
+    h1{
+      font-size: $medium;
+      letter-spacing: $spacing-p;
+      line-height: $lines-spacing-m;
+      text-transform: uppercase;
+    }
+    p{
+      line-height: $lines-spacing-m;
+    }
+    .social-media-icons{
+      margin-top: 0.5em;
+      margin-bottom: 0em;
+      font-size: 50px;
+      @include center-vertical-horizontal;
+      a{
+        color: $black;
+      }
+      a:first-of-type{
+        margin-right: 1em;
+      }
+    }
+    .merchandise{
+      margin-top: 2.4em;
+      margin-bottom: 4em;
+      div{
+        margin-top: 3em;
+      }
+      .btn{
+        z-index: 1;
+        color: $black;
+        font-size: $medium-big;
+        letter-spacing: $spacing-p;
+        position: relative;
+        box-sizing: border-box;
+        border: solid 2px;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-top: 3em;
+        padding-top: 0.2em;
+        padding-left: 0.1em;
+        &:before{
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 0%;
+          bottom: 0px;
+          left: 0px;
+          z-index: -1;
+          transition:  all 0.2s ease-out;
+        }
+        &:hover::before{
+          height: 100%;
+        }
+        }
+    }
+  }
+
+
+//MUNCHIES SECTION
+.munchies-screen{
+
+  height: 100%;
+  width: 100vw;
+  position: fixed;
+  overflow-x: scroll;
+  z-index: 100;
+  top:-200vh;
+  @include transition;
+  @include center-vertical-horizontal;
+  display: block;
+  &.active{
+    top:0;
+  }
+  .wine{
+    margin-top: 2em;
+    text-transform: uppercase;
+    h1{
+      margin-top: 1em;
+    }
+  }
+  .beer-soft{
+    margin-top: 2em;
+    text-transform: uppercase;
+    h1{
+      margin-top: 1em;
+    }
+    h2{
+      margin-top: 1em;
+    }
+  }
+  .food{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    text-transform: uppercase;
+    h1{
+      margin-top: 1em;
+    }
+    h2{
+      margin-top: 1em;
+    }
+  }
+  h1{
+    font-size: $medium;
+    @include text-center;
+  }
+  h2{
+    font-size: $medium;
+    @include text-center;
+  }
+  dt{
+    list-style: none;
+    font-size: $small;
+    @include text-center;
+    letter-spacing: 0.1em;
+    line-height: 2em;
+  }
+  dd{
+    list-style: none;
+    font-size: $mini;
+    @include text-center;
+    letter-spacing: 0.1em;
+    line-height: 2em;
+  }
+  ul{
+    list-style: none;
+    font-size: $small;
+    @include text-center;
+    letter-spacing: 0.1em;
+    line-height: 2em;
+  }
+  .cocktails{
+    margin-top: 5em;
+  }
+  .exit{
+    float: right;
+    margin-top: 1em;
+    margin-right: 1em;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: solid 1px;
+    @include center-vertical-horizontal;
+    @include transition;
+    transition-duration: 0.15s;
+    cursor: pointer;
+    &:hover{
+      //assigned top
+    }
+    img{
+      height: 30px;
+    }
+  }
+}
+
+//GALLERY SECTION
+.gallery{
+
+  .photo-gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 3em 3em;
+    img{
+      display: block;
+      box-shadow: -1px 0px 0px rgba(0,0,0,0.06);
+      width: 100vw;
+      border-radius: 3px;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.16), 0px 2px 10px rgba(0,0,0,0.12);
+      &:first-of-type{
+        margin-top: 3em;
+      }
+      &:last-of-type{
+        margin-bottom: 3em;
+      }
+    }
+  }
+}
+
+
+//PARALAX FUNCIONALITY
+
+.main{
+  min-height: 500px;
+  @include full;
+  background-size: cover;
+  background-position: center;
+  &.parallax{
+    background-attachment: fixed;
+    background-image:url(../../public/images/mish.jpg);
+  }
+  &.parallax2{
+    background-attachment: fixed;
+    /*background-image:url(../../public/images/vegetables.jpg);*/
+  }
+  &.parallax3{
+    background-attachment: fixed;
+    /*background-image:url(../../public/images/wine.jpg);*/
+  }
+  &.parallax4{
+    background-attachment: fixed;
+    /*background-image:url(../../public/images/cocktail2.jpg);*/
+  }
+}
+
+@media (min-width: 960px){
+
+
+//GENERAL GRID
+  .grid{
+    grid-template-columns: repeat(12,1fr);
+    @include full;
+    &.main{
+      height: 100%;
+    }
+    &.about{
+      height: 100vh;
+      overflow-y:auto;
+    }
+    &.menu{
+      height: 100vh;
+      overflow-y:auto;
+    }
+    &.contact{
+      min-height: 100vh;
+      overflow-y:auto;
+    }
+    &.gallery{
+      min-height: 100vh;
+      overflow-y:auto;
+    }
+  }
+
+  //MAIN SECTION
+  .logo-gimlet{
+    width: 100%;
+    grid-column: 5 / 9;
+    img{
+      margin-top: 11em;
+      margin-bottom: 11em;
+      width: 100%;
+    }
+  }
+  //ABOUT SECTION
+  .about-text{
+    grid-column: 2 / 6;
+    margin-top: 26vh;
+    margin-right: 0px;
+    margin-left: 0px;
+    h1{
+      font-size: $big;
+      margin-bottom: 1em;
+      letter-spacing: $spacing-h;
+      text-transform: uppercase;
+    }
+    p{
+      font-size: $medium;
+      line-height: $lines-spacing;
+      letter-spacing: $spacing-p;
+    }
+  }
+  .about-image{
+    grid-column: 8 / 12;
+    margin-top: 20vh;
+
+    margin-left: 0px;
+    margin-right: 0px;
+    img{
+      width: 100%;
+    }
+  }
+
+  //MENU SECTION
+  .menu-text{
+    grid-column: 4 / 10;
+    margin-top: 29vh;
+
+    h1{
+      font-size: $big;
+      letter-spacing: $spacing-h;
+    }
+    p{
+      font-size: $medium;
+      line-height: $lines-spacing;
+      letter-spacing: $spacing-p;
+    }
+    div{
+      margin-top: 10%;
+    }
+    .btn{
+      cursor: pointer;
+      text-transform: uppercase;
+      z-index: 1;
+      color: $black;
+      font-size: $big;
+      letter-spacing: $spacing-h;
+      position: relative;
+      border: solid 3px;
+      border-radius: 3px;
+      padding-top: 0.2em;
+      padding-left: 0.5em;
+      &:before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 0%;
+        bottom: 0px;
+        left: 0px;
+        z-index: -1;
+        transition:  all 0.2s ease-out;
+      }
+      &:hover::before{
+        height: 100%;
+      }
+    }
+  }
+  .menu-image{
+    grid-column: 2 / 5;
+    margin-top: 10%;
+    margin-bottom: 50px;
+    img{
+      width: 100%;
+    }
+  }
+
+  //CONTACT SECTION
+  #map{
+    width: 100%;
+    min-height: 600px;
+    margin-top:10em;
+    margin-bottom: 10em;
+    grid-column: 2 /7;
+  }
+  .information{
+    grid-column: 8 / 13;
+    text-align: center;
+    font-size: $medium;
+    line-height: $lines-spacing;
+    letter-spacing: $spacing-p;
+    margin-top: 16vh;
+    h1{
+      font-size: $big;
+      margin-top: 0.5em;
+      letter-spacing: $spacing-h
+    }
+    p{
+      margin-top: 2em;
+    }
+    .social-media-icons{
+      margin-top: 1em;
+      margin-bottom: 0em;
+      font-size: 50px;
+      @include center-vertical-horizontal;
+      a{
+        color: $black;
+      }
+      a:first-of-type{
+        margin-right: 1em;
+      }
+    }
+    .merchandise{
+      margin-top: 2.4em;
+      margin-bottom: 4em;
+      div{
+        margin-top: 3em;
+      }
+      .btn{
+        z-index: 1;
+        color: $black;
+        font-size: $big;
+        letter-spacing: $spacing-h;
+        position: relative;
+        box-sizing: border-box;
+        border: solid 3px;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-top: 3em;
+        padding-top: 0.2em;
+        padding-left: 0.5em;
+        &:before{
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 0%;
+          bottom: 0px;
+          left: 0px;
+          z-index: -1;
+          transition:  all 0.2s ease-out;
+        }
+        &:hover::before{
+          height: 100%;
+        }
+        }
+    }
+  }
+
+  //MUNCHIES SECTION
+  .munchies-screen{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 100;
+    top:-200vh;
+    @include transition;
+    @include center-vertical-horizontal;
+    &.active{
+      top:0;
+    }
+    .cocktails{
+      margin-top: 0px;
+      h1{
+        margin-top: 0px;
+      }
+    }
+    .wine{
+      margin-top: 0px;
+      h1{
+        margin-top: 0px;
+      }
+    }
+    .food{
+      margin-top: 5.7em;
+      h1{
+        margin-top: 0px;
+      }
+    }
+    dt{
+      font-size: $medium;
+      letter-spacing: 0.1em;
+      line-height: 3em;
+    }
+    h1{
+      font-size: $big;
+      @include text-center;
+      margin-top: 2em;
+    }
+    h2{
+      font-size: $big;
+    }
+    ul{
+      list-style: none;
+      font-size: $medium;
+      @include text-center;
+      letter-spacing: 0.1em;
+      line-height: 3em;
+    }
+    div{
+      margin-right: 15em;
+    }
+    .exit{
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      border: solid 1px;
+      @include center-vertical-horizontal;
+      @include transition;
+      transition-duration: 0.15s;
+      cursor: pointer;
+      &:hover{
+        background-color: $brown;
+      }
+      img{
+        height: 30px;
+      }
+    }
+  }
+
+  //GALLERY SECTION
+  .gallery{
+    height: 100%;
+    .photo-gallery{
+      margin-right: 3em;
+      margin-left: 3em;
+      img{
+        margin-top: 3em;
+        width: 100%;
+      }
+    }
+  }
+ }
+
+// NAV FUNCIONALITY
+ @media (max-width: 960px){
+   .menu-icon{
+     display: block;
+   }
+
+  .nav ul{
+       position: fixed;
+       background-color: $dark-jungle-green;
+       width: 100%;
+       height: 100vh;
+       top: 0px;
+       left: -200%;
+       text-align: center;
+       @include transition;
+       li{
+         display: block;
+         margin: 15% 0;
+         .hide-menu{
+           color: white;
+         }
+        i{
+          display: block;
+          font-size: 30px;
+          border-radius: 50%;
+          height: 50px;
+          width: 50px;
+          border: solid 1px;
+          cursor: pointer;
+          @include transition;
+          transition-duration: 0.15s;
+          @include center-vertical-horizontal;
+          margin-left: 43%;
+          margin-right: 47%;
+          &:hover{
+            background-color: $light-green;
+          }
+        }
+       }
+      }
+    .menu-vertical.show-menu{
+      left:0%;
+    }
+
+
+
+
+
+
+   }
+
+//ICON ANIMATIONS
+.instagram:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+.facebook:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(1px, 0, 0);
+  }
+}
